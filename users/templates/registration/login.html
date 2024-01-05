@@ -1,0 +1,31 @@
+{% load socialaccount %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+</head>
+
+<body>
+    <h1>Login Page</h1>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        {{login_form.as_p}}
+        <!-- <div class="Login_Setup">
+            <label for="Username"><b>Username :</b></label>
+            <input type="text" placeholder="Enter your username" name="Username" required>
+            <br><br>
+            <label for="Password"><b>Password :</b></label>
+            <input type="password" placeholder="Enter your password" name="Password" required>
+            <br><br>
+        </div> -->
+        <input type="submit"><b>Login</b></input>
+        <br>
+    </form>
+
+    <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+
+    <!-- <a href="{% provider_login_url 'facebook' %}"><b>Login with Facebook</b></a> -->
+</body>
+
+</html>
